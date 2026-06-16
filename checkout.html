@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>নিরাপদ চেকআউট - Huryan Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Hind Siliguri', sans-serif; } </style>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex flex-col justify-between">
+
+    <!-- হেডার বার -->
+    <header class="bg-slate-950 border-b border-slate-800 py-5">
+        <div class="container mx-auto px-6 flex justify-between items-center max-w-6xl">
+            <a href="index.html" class="text-2xl font-black tracking-tight">HURYAN<span class="text-indigo-500">.</span></a>
+            <a href="index.html" class="text-xs font-bold text-slate-400 hover:text-white transition flex items-center gap-2">
+                <i class="fa-solid fa-arrow-left"></i> শপিংয়ে ফিরে যান
+            </a>
+        </div>
+    </header>
+
+    <!-- মেইন চেকআউট আর্কিটেকচার -->
+    <main class="container mx-auto px-6 py-12 max-w-6xl flex-1">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- বাম পাশ: কাস্টমার তথ্য ফর্ম -->
+            <div class="lg:col-span-7 bg-slate-950 p-6 md:p-8 rounded-3xl border border-slate-800 space-y-5">
+                <h3 class="text-xl font-bold flex items-center gap-2 border-b border-slate-800 pb-3 text-indigo-400">
+                    <i class="fa-solid fa-id-card"></i> ১. আপনার ডেলিভারি তথ্য দিন
+                </h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-[10px] font-extrabold text-slate-500 uppercase tracking-wider mb-1">আপনার নাম *</label>
+                        <input type="text" id="cust-name" placeholder="আরিয়ান খান" class="w-full bg-slate-900 border border-slate-800 p-3.5 rounded-xl outline-none focus:border-indigo-500 text-slate-200 transition text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-extrabold text-slate-500 uppercase tracking-wider mb-1">মোবাইল নম্বর *</label>
+                        <input type="tel" id="cust-phone" placeholder="01XXXXXXXXX" class="w-full bg-slate-900 border border-slate-800 p-3.5 rounded-xl outline-none focus:border-indigo-500 text-slate-200 transition text-sm">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-extrabold text-slate-500 tracking-wider uppercase mb-1">পূর্ণ ঠিকানা (বাসা নং, রোড, থানা, জেলা) *</label>
+                    <input type="text" id="cust-address" placeholder="হাউস নং-৪, রোড-১০, মিরপুর, ঢাকা" class="w-full bg-slate-900 border border-slate-800 p-3.5 rounded-xl outline-none focus:border-indigo-500 text-slate-200 transition text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-extrabold text-slate-500 tracking-wider uppercase mb-1">ডেলিভারি এরিয়া নির্বাচন করুন *</label>
+                    <select id="shipping-zone" onchange="calculateFinalInvoice()" class="w-full bg-slate-900 border border-slate-800 p-3.5 rounded-xl outline-none focus:border-indigo-500 text-slate-300 font-semibold transition text-sm">
+                        <option value="60">ঢাকার ভিতরে (চার্জ ৳৬০)</option>
+                        <option value="120">ঢাকার বাইরে (চার্জ ৳১২০)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- ডান পাশ: লাইভ আইটেম লিস্ট ও ইনভয়েস ক্যালকুলেটর -->
+            <div class="lg:col-span-5 bg-gradient-to-b from-slate-950 to-slate-900 p-6 md:p-8 rounded-3xl border border-slate-800 space-y-6">
+                <h3 class="text-lg font-bold border-b border-slate-800 pb-3">২. আপনার অর্ডার বিবরণ</h3>
+                
+                <!-- লাইভ প্রোডাক্ট প্রিভিউ লিস্ট -->
+                <div id="checkout-items-list" class="space-y-3 max-h-[200px] overflow-y-auto pr-1 divide-y divide-slate-900">
+                    <!-- জাভাস্ক্রিপ্ট আইটেম লোড করবে -->
+                </div>
+
+                <!-- লাইভ ইনভয়েস স্লিপ -->
+                <div class="bg-slate-900/50 p-4 rounded-xl space-y-3 text-xs font-semibold text-slate-400 border border-slate-800">
+                    <div class="flex justify-between"><span>মোট সাবটোটাল:</span><span class="text-white">৳<span id="invoice-subtotal">0</span></span></div>
+                    <div class="flex justify-between"><span>ডেলিভারি চার্জ:</span><span class="text-white">৳<span id="invoice-shipping">60</span></span></div>
+                    <div class="flex justify-between text-indigo-400"><span>ফ্ল্যাশ সেল ডিসকাউন্ট (১০%):</span><span>-৳<span id="invoice-discount">0</span></span></div>
+                    <hr class="border-slate-800">
+                    <div class="flex justify-between text-sm font-black text-white">
+                        <span>সর্বমোট পরিশোধযোগ্য বিল:</span>
+                        <span class="text-amber-400 text-lg">৳<span id="invoice-grandtotal">0</span></span>
+                    </div>
+                </div>
+
+                <button onclick="submitOrder()" class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:opacity-95 text-white font-black py-4 rounded-xl transition duration-300 shadow-lg flex items-center justify-center gap-2 text-sm">
+                    <i class="fa-solid fa-shield-check"></i> সফলভাবে অর্ডার সম্পন্ন করুন
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ফুটার কপিরাইট -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+        <p>© ২০২৬ Huryan Premium. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let checkoutCart = [];
+
+        function loadCheckoutItems() {
+            const savedCart = localStorage.getItem('huryan_premium_cart');
+            if(savedCart) {
+                checkoutCart = JSON.parse(savedCart);
+            }
+
+            if(checkoutCart.length === 0) {
+                alert("আপনার কার্ট খালি! হোমে ফিরে যান।");
+                window.location.href = "index.html";
+                return;
+            }
+
+            const listContainer = document.getElementById('checkout-items-list');
+            listContainer.innerHTML = checkoutCart.map(item => `
+                <div class="flex justify-between items-center py-2.5">
+                    <div class="flex items-center gap-2.5">
+                        <img src="${item.image}" class="w-10 h-10 rounded-lg object-cover border border-slate-800">
+                        <div>
+                            <p class="text-xs font-bold text-slate-200 line-clamp-1 w-40">${item.name}</p>
+                            <p class="text-[10px] text-slate-500">পরিমাণ: ${item.quantity} টি</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-black text-slate-300">৳${(item.price * item.quantity).toLocaleString()}</span>
+                </div>
+            `).join('');
+
+            calculateFinalInvoice();
+        }
+
+        function calculateFinalInvoice() {
+            const subtotal = checkoutCart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shipping = parseInt(document.getElementById('shipping-zone').value) || 60;
+            const discount = Math.round((subtotal * 10) / 100); // ১০% অফার কামডাউন ক্যালকুলেশন
+            const total = (subtotal - discount) + shipping;
+
+            document.getElementById('invoice-subtotal').innerText = subtotal.toLocaleString();
+            document.getElementById('invoice-shipping').innerText = shipping;
+            document.getElementById('invoice-discount').innerText = discount.toLocaleString();
+            document.getElementById('invoice-grandtotal').innerText = total.toLocaleString();
+        }
+
+        function submitOrder() {
+            const name = document.getElementById('cust-name').value.trim();
+            const phone = document.getElementById('cust-phone').value.trim();
+            const address = document.getElementById('cust-address').value.trim();
+
+            if(!name || !phone || !address) {
+                alert("দয়া করে স্টারের (*) চিহ্নিত সব তথ্য সঠিকভাবে পূরণ করুন।");
+                return;
+            }
+
+            alert("🎉 ধন্যবাদ " + name + "! আপনার অর্ডারটি সফলভাবে রিসিভ হয়েছে। আমাদের কাস্টমার কেয়ার টিম দ্রুত আপনাকে কল করবে।");
+            localStorage.removeItem('huryan_premium_cart'); // অর্ডার শেষে কার্ট ক্লিয়ার
+            window.location.href = "index.html"; // হোমে ব্যাক
+        }
+
+        document.addEventListener("DOMContentLoaded", loadCheckoutItems);
+    </script>
+</body>
+</html>

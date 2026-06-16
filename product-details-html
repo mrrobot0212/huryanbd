@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseus Bipow 10000mAh Power Bank - Product Details</title>
+    <!-- Tailwind CSS (মডার্ন ডিজাইনের জন্য) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#f8fafc] font-sans text-slate-900 antialiased">
+
+    <!-- মডার্ন গ্লাস-লুক নেভিগেশন বার -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100 transition-all">
+        <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-black tracking-tight text-slate-900">⚡ BRAND<span class="text-indigo-600">SHOP</span></a>
+            
+            <!-- মিনিমালিস্ট লাইভ কার্ট কাউন্টার -->
+            <a href="checkout.html" class="relative bg-slate-100 hover:bg-slate-200 text-slate-800 p-3 rounded-full transition-all duration-200">
+                <i class="fa-solid var(--fa-shopping-cart) fa-shopping-cart text-lg"></i>
+                <span id="nav-cart-count" class="absolute -top-1 -right-1 bg-indigo-600 text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center animate-pulse">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- মেইন কন্টেনার -->
+    <main class="container mx-auto px-4 md:px-8 py-8 max-w-6xl">
+        
+        <!-- ব্রেডক্রাম্ব / ব্যাক বাটন -->
+        <div class="mb-6">
+            <a href="index.html" class="text-slate-500 hover:text-indigo-600 font-medium text-sm inline-flex items-center gap-2 transition">
+                <i class="fa-solid fa-arrow-left"></i> হোমপেজে ফিরে যান
+            </a>
+        </div>
+
+        <!-- ২-কলাম লেআউট (ইমেজ + প্রোডাক্ট ডিটেইলস) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 bg-white p-6 md:p-10 rounded-3xl border border-slate-100 shadow-sm">
+            
+            <!-- বাম সাইড: প্রিমিয়াম গ্যালারি সিস্টেম (৫ কলাম) -->
+            <div class="lg:col-span-5 space-y-4">
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 overflow-hidden group flex items-center justify-center h-[350px] md:h-[420px]">
+                    <img id="main-product-image" src="https://www.startech.com.bd/image/cache/catalog/power-bank/baseus/bipow-15w-10000mah/bipow-15w-10000mah-black-01-500x500.webp" 
+                         alt="Baseus Bipow 10000mAh" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105">
+                </div>
+                
+                <!-- থাম্বনেইল গ্রিড (ব্র্যান্ড স্টাইল ইমেজ গ্যালারি) -->
+                <div class="grid grid-cols-4 gap-3">
+                    <div onclick="changeProductImage(this, 'https://www.startech.com.bd/image/cache/catalog/power-bank/baseus/bipow-15w-10000mah/bipow-15w-10000mah-black-01-500x500.webp')" class="gallery-thumb border-2 border-indigo-600 rounded-xl p-2 bg-slate-50 cursor-pointer transition aspect-square flex items-center justify-center">
+                        <img src="https://www.startech.com.bd/image/cache/catalog/power-bank/baseus/bipow-15w-10000mah/bipow-15w-10000mah-black-01-500x500.webp" class="max-h-full object-contain" alt="thumb">
+                    </div>
+                    <div onclick="changeProductImage(this, 'https://www.startech.com.bd/image/cache/catalog/power-bank/baseus/bipow-15w-10000mah/bipow-15w-10000mah-02-500x500.webp')" class="gallery-thumb border border-slate-200 rounded-xl p-2 bg-slate-50 cursor-pointer transition hover:border-indigo-400 aspect-square flex items-center justify-center">
+                        <img src="https://www.startech.com.bd/image/cache/catalog/power-bank/baseus/bipow-15w-10000mah/bipow-15w-10000mah-02-500x500.webp" class="max-h-full object-contain" alt="thumb">
+                    </div>
+                    <div onclick="changeProductImage(this, 'https://www.startech.com.bd/image/cache/catalog/power-bank/baseus/bipow-15w-10000mah/bipow-15w-10000mah-white-500x500.webp')" class="gallery-thumb border border-slate-200 rounded-xl p-2 bg-slate-50 cursor-pointer transition hover:border-indigo-400 aspect-square flex items-center justify-center">
+                        <img src="https://www.startech.com.bd/image/cache/catalog/power-bank/baseus/bipow-15w-10000mah/bipow-15w-10000mah-white-500x500.webp" class="max-h-full object-contain" alt="thumb">
+                    </div>
+                    <div onclick="changeProductImage(this, 'https://www.startech.com.bd/image/cache/catalog/power-bank/baseus/bipow-15w-10000mah/bipow-15w-10000mah-black-05-500x500.webp')" class="gallery-thumb border border-slate-200 rounded-xl p-2 bg-slate-50 cursor-pointer transition hover:border-indigo-400 aspect-square flex items-center justify-center">
+                        <img src="https://www.startech.com.bd/image/cache/catalog/power-bank/baseus/bipow-15w-10000mah/bipow-15w-10000mah-black-05-500x500.webp" class="max-h-full object-contain" alt="thumb">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ডান সাইড: ইনফরমেশন + কোয়ান্টিটি এবং লাইভ স্টক সিস্টেম (৭ কলাম) -->
+            <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+                
+                <!-- ১. মূল প্রোডাক্ট ইনফরমেশন -->
+                <div class="space-y-3">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Baseus Original</span>
+                        <span id="stock-badge" class="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-ping"></span> স্টকে আছে: <span id="current-stock-count">১২</span> টি
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-xl md:text-3xl font-black text-slate-900 tracking-tight leading-snug">
+                        Baseus PPBD10 Bipow Digital Display 15W 10000mAh Power Bank
+                    </h1>
+                    
+                    <!-- প্রাইস সেকশন -->
+                    <div class="flex items-baseline gap-3 pt-2">
+                        <span class="text-3xl font-black text-indigo-600">৳১,৫০০</span>
+                        <span class="text-sm text-slate-400 line-through">৳১,৯০০</span>
+                        <span class="text-xs bg-rose-50 text-rose-600 font-bold px-2 py-0.5 rounded">-৳৪০০ ছাড়</span>
+                    </div>
+                </div>
+
+                <!-- ২. মিনিমাল ও ক্লিন প্রোডাক্ট স্পেসিফিকেশন টেবিল (নো হাবিজাবি এক্সট্রা টেক্সট) -->
+                <div class="border-t border-b border-slate-100 py-4">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">প্রোডাক্টের মূল বিবরণ:</h3>
+                    <div class="grid grid-cols-2 gap-y-2.5 text-sm">
+                        <div class="text-slate-500 font-medium">ক্যাপাসিটি:</div>
+                        <div class="text-slate-900 font-semibold">10000mAh / 3.7V (37Wh)</div>
+                        
+                        <div class="text-slate-500 font-medium">আউটপুট ওয়াট:</div>
+                        <div class="text-slate-900 font-semibold">15W ম্যাক্স ফাস্ট চার্জিং</div>
+                        
+                        <div class="text-slate-500 font-medium">ডিসপ্লে টাইপ:</div>
+                        <div class="text-slate-900 font-semibold">এলইডি ডিজিটাল রিয়েল-টাইম ডিসপ্লে</div>
+                        
+                        <div class="text-slate-500 font-medium">আউটপুট পোর্ট:</div>
+                        <div class="text-slate-900 font-semibold">2x USB-A, 1x Type-C [সিমল্ট্যানিয়াস ৩ ডিভাইস]</div>
+
+                        <div class="text-slate-500 font-medium">ওয়ারেন্টি:</div>
+                        <div class="text-slate-900 font-semibold text-indigo-600">৩ মাসের অফিসিয়াল ওয়ারেন্টি</div>
+                    </div>
+                </div>
+
+                <!-- ৩. কোয়ান্টিটি সিলেক্টর এবং ডাইনামিক লাইভ প্রাইস ক্যালকুলেটর -->
+                <div class="bg-slate-50 p-4 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">অর্ডার সংখ্যা নির্বাচন করুন:</p>
+                        <!-- প্রিমিয়াম কাউন্টার বক্স -->
+                        <div class="inline-flex items-center bg-white border border-slate-200 rounded-xl p-1 shadow-sm">
+                            <button onclick="changeQuantity(-1)" class="w-10 h-10 flex items-center justify-center text-slate-600 hover:bg-slate-100 active:scale-95 rounded-lg transition font-bold text-lg">-</button>
+                            <span id="product-qty" class="w-12 text-center font-mono font-bold text-base text-slate-900">1</span>
+                            <button onclick="changeQuantity(1)" class="w-10 h-10 flex items-center justify-center text-slate-600 hover:bg-slate-100 active:scale-95 rounded-lg transition font-bold text-lg">+</button>
+                        </div>
+                    </div>
+                    
+                    <!-- রিয়েল-টাইম লাইভ টোটাল আপডেট (বড় ব্র্যান্ডের মতো) -->
+                    <div class="sm:text-right">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">মোট সাবটোটাল:</p>
+                        <p class="text-2xl font-black text-slate-900">৳<span id="live-total-price">1500</span></p>
+                    </div>
+                </div>
+
+                <!-- ৪. স্মার্ট ব্র্যান্ড অ্যাকশন বাটনসমূহ -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    <button onclick="processCartAction(false)" class="w-full bg-slate-900 hover:bg-indigo-600 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-200 shadow-md flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-solid fa-cart-plus"></i> কার্টে যুক্ত করুন
+                    </button>
+                    <button onclick="processCartAction(true)" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-95 text-white font-black py-4 px-6 rounded-2xl transition-all duration-200 shadow-lg shadow-indigo-100 flex items-center justify-center gap-2 text-sm">
+                        এখনই কিনুন <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- জাভাস্ক্রিপ্ট কন্ট্রোলার -->
+    <script>
+        // রিয়েল-টাইম ডাটা অবজেক্ট
+        let currentProduct = {
+            id: 202610,
+            name: "Baseus Bipow 15W 10000mAh Power Bank",
+            basePrice: 1500,
+            currentQuantity: 1,
+            availableStock: 12 // লাইভ স্টক সংখ্যা (আপনার Screenshot 2026-06-16 024950.jpg এর আদলে)
+        };
+
+        // ১. ইমেজ গ্যালারি চেঞ্জার এবং বর্ডার হাইলাইটার
+        function changeProductImage(element, imageSrc) {
+            document.getElementById('main-product-image').src = imageSrc;
+            
+            // সব থাম্বনেইল থেকে একটিভ বর্ডার সরানো
+            document.querySelectorAll('.gallery-thumb').forEach(thumb => {
+                thumb.classList.remove('border-indigo-600', 'border-2');
+                thumb.classList.add('border-slate-200', 'border');
+            });
+            
+            // সিলেক্টেড থাম্বনেইলে বর্ডার দেওয়া
+            element.classList.remove('border-slate-200', 'border');
+            element.classList.add('border-indigo-600', 'border-2');
+        }
+
+        // ২. কোয়ান্টিটি সিস্টেম এবং স্টক লিমিট ভ্যালিডেশন
+        function changeQuantity(amount) {
+            let targetQty = currentProduct.currentQuantity + amount;
+            
+            if (targetQty < 1) return;
+            
+            // স্টক লিমিট চেক করা (কাস্টমার স্টকের বেশি অর্ডার করতে পারবে না)
+            if (targetQty > currentProduct.availableStock) {
+                alert("দুঃখিত, এই মুহূর্তে আমাদের স্টকে সর্বোচ্চ " + currentProduct.availableStock + "টি প্রোডাক্ট অবশিষ্ট আছে।");
+                return;
+            }
+
+            currentProduct.currentQuantity = targetQty;
+            updateDynamicUI();
+        }
+
+        // ৩. ডাইনামিক লাইভ প্রাইস আপডেট করা
+        function updateDynamicUI() {
+            document.getElementById('product-qty').innerText = currentProduct.currentQuantity;
+            
+            let calculatedTotal = currentProduct.basePrice * currentProduct.currentQuantity;
+            document.getElementById('live-total-price').innerText = calculatedTotal;
+        }
+
+        // ৪. কার্ট অ্যাকশন ও ব্রাউজার লোকালস্টোরেজ হ্যান্ডলিং (যাতে চেকআউট পেজে ডাটা পাওয়া যায়)
+        function processCartAction(redirectNow) {
+            let cartData = [];
+            const existingCart = localStorage.getItem('huryan_cart');
+            if (existingCart) cartData = JSON.parse(existingCart);
+
+            const isAlreadyInCart = cartData.find(item => item.id === currentProduct.id);
+            if (isAlreadyInCart) {
+                isAlreadyInCart.quantity = currentProduct.currentQuantity; 
+            } else {
+                cartData.push({
+                    id: currentProduct.id,
+                    name: currentProduct.name,
+                    price: currentProduct.basePrice,
+                    quantity: currentProduct.currentQuantity
+                });
+            }
+
+            localStorage.setItem('huryan_cart', JSON.stringify(cartData));
+            refreshCartBadge();
+
+            if (redirectNow) {
+                window.location.href = "checkout.html"; // চেকআউট পেজে নিয়ে যাবে
+            } else {
+                alert("সাফল্যের সাথে কার্টে যুক্ত হয়েছে!");
+            }
+        }
+
+        // ৫. নেভিগেশন বারের লাইভ কার্ট ব্যাজ আপডেট করা
+        function refreshCartBadge() {
+            const savedCart = localStorage.getItem('huryan_cart');
+            if (savedCart) {
+                const cart = JSON.parse(savedCart);
+                const totalQty = cart.reduce((total, item) => total + item.quantity, 0);
+                document.getElementById('nav-cart-count').innerText = totalQty;
+            }
+        }
+
+        // পেজ ফার্স্ট টাইম লোড হবার সময় ইনিশিয়ালাইজেশন
+        document.addEventListener("DOMContentLoaded", () => {
+            updateDynamicUI();
+            refreshCartBadge();
+        });
+    </script>
+</body>
+</html>
